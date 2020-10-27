@@ -29,7 +29,7 @@ var removeElement = function(nums, val) {
     let len = nums.length, i = 0;
     
     for (let j = 0; j < len; j++) {
-        if (nums[j] === val) {
+        if (nums[j] !== val) {
             nums[i] = nums[j];
             i++;
         }
