@@ -33,31 +33,34 @@
  * @return {boolean}
  */
 
-var isPalindrome = function(x) {
-    if (x < 0 || Math.abs(x) >= 2**31) {return false;}
-    if (x < 10) {return true;}
-    let xStr = x.toString();
-    let len = xStr.length, check = false;
-    if (len == 2) {return xStr[0]===xStr[1];}
-    for (let i = 0, j = len-1; i <= Math.floor(len/2), j>= Math.floor(len/2); i++, j--) {
-        if (xStr[i] === xStr[j]) {
-            check = true;
-        }
-        else {return false;}
-        // console.log("len: ", len, ", i: ", i, ", j: ", j, "check: ", check);
-    }
-    return check;
-};
+// var isPalindrome = function(x) {
+//     if (x < 0 || Math.abs(x) >= 2**31) {return false;}
+//     if (x < 10) {return true;}
+//     let xStr = x.toString();
+//     let len = xStr.length, check = false;
+//     if (len == 2) {return xStr[0]===xStr[1];}
+//     for (let i = 0, j = len-1; i <= Math.floor(len/2), j>= Math.floor(len/2); i++, j--) {
+//         if (xStr[i] === xStr[j]) {
+//             check = true;
+//         }
+//         else {return false;}
+//         // console.log("len: ", len, ", i: ", i, ", j: ", j, "check: ", check);
+//     }
+//     return check;
+// };
 
-var isPalindrome = function(num) {
-    var top = Math.pow(10, Math.log10(num) | 0), bot = 1;
-    while (top >= bot) {
-        if ((num / top % 10 | 0) !== (num / bot % 10 | 0)) { return false }
-        top /= 10;
-        bot *= 10;
+const isPalindrome = x => {
+    if (x < 0) return false
+
+    let reversed = 0, y = x
+
+    while (y > 0) {
+        const lastDigit = y % 10
+        reversed = (reversed * 10) + lastDigit
+        y = (y / 10) | 0
     }
-    return true;
-};
+    return x === reversed
+}
 
 let x1 =121;
 let x2 = -121;
