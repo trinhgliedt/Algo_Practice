@@ -42,7 +42,7 @@ function justifiedSentence(str, l){
         }
         noOfIteration++;
     }
-    // Step 1: insert spaces into each line (array values) to meet the requited length in each line
+    // Step 2: insert spaces into each line (array values) to meet the requited length in each line
     let noOfLines = result.length;
     for (let i = 0; i < noOfLines-1; i++){ // minus last line in the string
         if (result[i].length < l) { //this means more space is needed for this line
