@@ -1,15 +1,15 @@
-// Fibonacci
-// Implement the Fibonacci function, a famous mathematical equation that generates a numerical
-// sequence such that each number is the sum of the previous two. The Fibonacci numbers at index 0
+// fibonacci2
+// Implement the fibonacci2 function, a famous mathematical equation that generates a numerical
+// sequence such that each number is the sum of the previous two. The fibonacci2 numbers at index 0
 // and 1, coincidentally, have values of 0 and 1. Your function should accept an argument of which
-// Fibonacci number.
-// Examples: fibonacci(2) = 1, fibonacci(3) = 2, fibonacci(4) = 3, fibonacci(5) = 5, etc.
-function fibonacci(x) {
+// fibonacci2 number.
+// Examples: fibonacci2(2) = 1, fibonacci2(3) = 2, fibonacci2(4) = 3, fibonacci2(5) = 5, etc.
+function fibonacci2(x) {
     if (x <= 1) return 1;
-    return fibonacci(x - 1) + fibonacci(x - 2);
+    return fibonacci2(x - 1) + fibonacci2(x - 2);
 }
 
-function fibonacci1(x) {
+function fibonacci21(x) {
     let a = 1, b = 0, temp = 0;
     while (x >= 0) {
         temp = a;
@@ -20,7 +20,7 @@ function fibonacci1(x) {
     return b
 }
 
-function fibonacci2(x) {
+function fibonacci22(x) {
     let a = 1, b = 0, temp = 0;
     for (let i = x; i >=0; i--) {
         temp = a;
@@ -31,16 +31,16 @@ function fibonacci2(x) {
     return b
 }
 
-// console.log(fibonacci(2));
-// console.log(fibonacci(3));
-// console.log(fibonacci(4));
-// console.log(fibonacci(5));
-// console.log(fibonacci(6));
-// console.log(fibonacci(7));
-// console.log(fibonacci(8));
-// console.log(fibonacci(9));
-// console.log(fibonacci(10));
-// console.log(fibonacci(11));
-// console.log(fibonacci(12));
-// console.log(fibonacci1(12));
+console.log(fibonacci2(0));
+console.log(fibonacci2(1));
+console.log(fibonacci2(2));
+console.log(fibonacci2(3));
+console.log(fibonacci2(4));
+console.log(fibonacci2(5));
+console.log(fibonacci2(6));
+console.log(fibonacci2(7));
+console.log(fibonacci2(8));
+console.log(fibonacci2(9));
+console.log(fibonacci2(10));
+console.log(fibonacci2(11));
 console.log(fibonacci2(12));
