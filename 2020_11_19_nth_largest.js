@@ -28,7 +28,7 @@ function nthLargest(arr, n) {
         console.log("maxArr: ", maxArr);
         return maxArr[n-1];
     }
-}
+}}
 console.log("line 23: ", nthLargest([5,3,2,9,15,20,6], 3));
 console.log("line 24: ", nthLargest([5,3,2,9,15,20,6], 5));
 console.log("line 25: ", nthLargest([2],1));
