@@ -11,8 +11,9 @@
 // punctuation and capitalization: if given "Dud" or
 // "oho!" , return false .
 function isPalindrome(str){
-    let check = false;
     let len = str.length
+    if (len === 1) {return true;}
+    let check = false;
     for (let i = 0; i<Math.floor(len/2); i++) {
         if (str[i] === str[len-1-i]) {check = true;}
         else {check = false;}
@@ -22,3 +23,4 @@ function isPalindrome(str){
 console.log(isPalindrome("racecar"));
 console.log(isPalindrome("Dad"));
 console.log(isPalindrome("oho!"));
+console.log(isPalindrome("b"));
