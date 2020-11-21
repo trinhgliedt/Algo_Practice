@@ -20,6 +20,16 @@ function isPalindrome(str){
     }
     return check;
 }
+function isPalindrome2(str){
+    var BackwardsString = "";
+    for (var i = str.length-1; i >= 0; i--){
+        BackwardsString += str[i];
+        console.log(BackwardsString);
+  
+        }
+        return BackwardsString === str;
+  
+}
 console.log(isPalindrome("racecar"));
 console.log(isPalindrome("Dad"));
 console.log(isPalindrome("oho!"));
