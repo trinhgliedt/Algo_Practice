@@ -11,26 +11,15 @@
 // punctuation and capitalization: if given "Dud" or
 // "oho!" , return false .
 function isPalindrome(str){
-    let len = str.length
-    if (len === 1) {return true;}
-    let check = false;
-    for (let i = 0; i<Math.floor(len/2); i++) {
-        if (str[i] === str[len-1-i]) {check = true;}
-        else {check = false;}
-    }
-    return check;
-}
-function isPalindrome2(str){
-    var BackwardsString = "";
+    var backwardsString = "";
     for (var i = str.length-1; i >= 0; i--){
-        BackwardsString += str[i];
-        console.log(BackwardsString);
+        backwardsString += str[i];
   
         }
-        return BackwardsString === str;
-  
+        return backwardsString === str;
 }
 console.log(isPalindrome("racecar"));
 console.log(isPalindrome("Dad"));
 console.log(isPalindrome("oho!"));
 console.log(isPalindrome("b"));
+console.log(isPalindrome(" up, daddy-o?"));
