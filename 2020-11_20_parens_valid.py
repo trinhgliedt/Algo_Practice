@@ -16,7 +16,7 @@ def parensValid(str):
             count -= 1
     return True if count == 0 else False
 
-print(parensValid("y(3(p)p(3)r)s")); #true
-print(parensValid("n(0(p)3")); # false
-print(parensValid("n)0(t(0)k")); #false
-print(parensValid("()(()(())))")); #false
+print(parensValid("y(3(p)p(3)r)s")) #true
+print(parensValid("n(0(p)3")) # false
+print(parensValid("n)0(t(0)k")) #false
+print(parensValid("()(()(())))")) #false
