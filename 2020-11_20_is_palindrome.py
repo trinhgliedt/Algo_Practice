@@ -11,6 +11,8 @@
 # punctuation and capitalization: if given "Dud" or
 # "oho!" , return false .
 def isPalindrome(str):
+    if len(str) == 1:
+        return True
     check = False;
     for i, v in enumerate(str):
         if v == str[-1-i]:
