@@ -11,15 +11,10 @@
 # punctuation and capitalization: if given "Dud" or
 # "oho!" , return false .
 def isPalindrome(str):
-    if len(str) == 1:
-        return True
-    check = False;
-    for i, v in enumerate(str):
-        if v == str[-1-i]:
-            check = True
-        else:
-            check = False
-    return check
+    backwardsString = ""
+    for v in reversed(str):
+        backwardsString += v
+    return backwardsString == str
 
 print(isPalindrome("racecar"))
 print(isPalindrome("Dad"))
