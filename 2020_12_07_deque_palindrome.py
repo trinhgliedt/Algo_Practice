@@ -34,3 +34,15 @@ def pal_checker(a_string):
 print(pal_checker("lsdkjfskf"))
 print(pal_checker("radar"))
 print(pal_checker("madam"))
+
+
+# • Queues can assist in the construction of timing simulations.
+# • Simulations use random number generators to create a real-life situation and allow us to
+# answer “what if” types of questions.
+# • Deques are data structures that allow hybrid behavior like that of stacks and queues.
+# • The fundamental operations for a deque are add_front, add_rear, remove_front, remove_
+# rear, and is_empty.
+# • Lists are collections of items where each item holds a relative position.
+# • A linked list implementation maintains logical order without requiring physical storage
+# requirements.
+# • Modification to the head of the linked list is a special case.
