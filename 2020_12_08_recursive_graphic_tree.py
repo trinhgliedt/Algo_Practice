@@ -1,19 +1,18 @@
 import turtle
 
-def tree(branch_len, t):
+def tree(branch_len, t, pen_size):
     if branch_len > 5:
-        if branch_len > 50:
-            t.pensize(7)
-        elif branch_len > 20:
-            t.pensize(2)
-        elif branch_len > 10:    
-            t.pensize(1)
-            # t.color("yellow")
+        if branch_len < 15:
+            t.color("brown")
+        else:
+            t.color("green")
+        
+        t.pensize(pen_size)        
         t.forward(branch_len)
         t.right(20)
-        tree(branch_len - 15, t)
+        tree(branch_len - 15, t, pen_size-0.5)
         t.left(40)
-        tree(branch_len - 10,t)
+        tree(branch_len - 10,t, pen_size-0.5)
         t.right(20)
         t.backward(branch_len)
 
@@ -25,7 +24,7 @@ def main():
     t.backward(100)
     t.down()
     t.color("green")
-    tree(75, t)
+    tree(75, t, 4)
     my_win.exitonclick()
 main()
 
