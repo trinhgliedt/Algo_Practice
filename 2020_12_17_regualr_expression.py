@@ -1,3 +1,5 @@
+# https://www.programiz.com/python-programming/regex
+
 import re
 # ------------------ ^a...s$: any five letter string starting with a and ending with s.
 
