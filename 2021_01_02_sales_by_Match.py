@@ -38,7 +38,7 @@
 # import sys
 
 # Complete the sockMerchant function below.
-def sockMerchant(n, ar):
+def sockMerchant1(n, ar):
     cMap = {}
     sockPairs = 0
     for color in ar:
@@ -50,6 +50,20 @@ def sockMerchant(n, ar):
     for color in cMap:
         pair = cMap[color]//2
         sockPairs += pair
+    return sockPairs
+print(sockMerchant1(9, [10,20,20,10,10,30,50,10,20]))
+
+def sockMerchant(n, ar):
+    cMap = {}
+    sockPairs = 0
+    for color in ar:
+        if color not in cMap:
+            cMap[color] = 1
+        # if color already exists and its value was 1, this mean this is a matching for the pair --> delete the key value pair from the cMap dict to save space
+        elif cMap[color] == 1:
+            cMap.pop(color)
+            sockPairs += 1
+    print(cMap)
     return sockPairs
 print(sockMerchant(9, [10,20,20,10,10,30,50,10,20]))
 # if __name__ == '__main__':
