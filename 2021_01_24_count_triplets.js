@@ -1,5 +1,5 @@
 // https://www.hackerrank.com/challenges/count-triplets-1/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=dictionaries-hashmaps
-// You are given an array and you need to find number of tripets of indices  such that the elements at those indices are in geometric progression for a given common ratio  and .
+// You are given an array and you need to find number of tripets of indices  such that the vments at those indices are in geometric progression for a given common ratio  and .
 
 // For example, . If , we have  and  at indices  and .
 
@@ -79,8 +79,34 @@
 // }
 
 // Complete the countTriplets function below.
-function countTriplets(arr, r) {}
+function countTriplets(arr, r) {
+  let len = arr.length; //1,1,3,9
+  let count = 0;
+  var m2 = new Map();
+  var m3 = new Map();
+  arr.forEach((v) => {
+    if (m3.get(v)) count = count + m3.get(v);
 
+    if (m2.get(v))
+      m3.set(v * r, m3.get(v * r) ? m3.get(v * r) + m2.get(v) : m2.get(v));
+
+    m2.set(v * r, m2.get(v * r) ? m2.get(v * r) + 1 : 1);
+    console.log(
+      v,
+      "m2:",
+      m2,
+      ",m3:",
+      m3,
+      ",count:",
+      count,
+      ",m3.get(v):",
+      m3.get(v)
+    );
+  });
+  return count;
+}
+
+console.log(countTriplets([1, 3, 9, 9, 27, 81], 3));
 // function main() {
 //     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
