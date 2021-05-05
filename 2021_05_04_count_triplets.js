@@ -80,30 +80,33 @@
 
 // Complete the countTriplets function below.
 function countTriplets(arr, r) {
+  let len = arr.length; //1,1,3,9
   let count = 0;
-  // create 2 Maps
-  // first map to track node 2 of each triplet
-  // second map to track node 3 of each triplet
-  let m2 = new Map();
-  let m3 = new Map();
-  // iterate through array,
+  var m2 = new Map();
+  var m3 = new Map();
   arr.forEach((v) => {
-    // one valid line is counted if current value is in node 3:
-    if (m3.get(v)) {
-      count = count + m3.get(v);
-    }
-    // if current value is a valid node 2 --> add node 2 to second map
-    if (m2.get(v)) {
+    if (m3.get(v)) count = count + m3.get(v);
+
+    if (m2.get(v))
       m3.set(v * r, m3.get(v * r) ? m3.get(v * r) + m2.get(v) : m2.get(v));
-    }
-    // increase node 3 count by 1
+
     m2.set(v * r, m2.get(v * r) ? m2.get(v * r) + 1 : 1);
+    console.log(
+      v,
+      "m2:",
+      m2,
+      ",m3:",
+      m3,
+      ",count:",
+      count,
+      ",m3.get(v):",
+      m3.get(v)
+    );
   });
   return count;
 }
 
-console.log(countTriplets([1, 3, 9, 9, 27, 81], 3));
-console.log(countTriplets([1, 3, 3, 9, 9, 27, 81], 3));
+// console.log(countTriplets([1, 3, 9, 9, 27, 81], 3));
 console.log(countTriplets([1, 1, 5, 5, 5, 25, 125], 5));
 // function main() {
 //     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
