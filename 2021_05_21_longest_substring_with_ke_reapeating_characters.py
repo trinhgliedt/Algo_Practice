@@ -107,6 +107,27 @@ def longestSubstring3(self, s: str, k: int) -> int:
     return len(s)
 
 
+class Solution(object):
+    def longestSubstring(self, s, k):
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
+        counter = collections.Counter(s)
+        if all(counter[i] >= k for i in counter):
+            return len(s)
+
+        start, longest = 0, 0
+        for i in xrange(len(s)):
+            if counter[s[i]] < k:
+                longest = max(longest, self.longestSubstring(s[start:i], k))
+                start = i + 1
+
+        longest = max(longest, self.longestSubstring(s[start:], k))
+        return longest
+
+
 # print(longestSubstring("aaabb", 3))
 # print(longestSubstring("ababbc", 2))
 print(longestSubstring("ababacb", 3))
