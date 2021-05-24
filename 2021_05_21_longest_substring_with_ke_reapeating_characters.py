@@ -47,7 +47,7 @@ def longestSubstring1(s, k):
     return len(result)
 
 
-def longestSubstring(s, k):
+def longestSubstring4(s, k):
     hMap = collections.Counter(s)
     print(hMap)
     best_substring_len = 0
