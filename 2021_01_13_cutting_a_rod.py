@@ -51,7 +51,7 @@ arr1 = [3, 5, 8, 9, 10, 17, 17, 20]
 arr2 = [5, 5, 8, 9, 10, 17, 17, 20]
 size = len(arr)
 # print("Maximum Obtainable Value is", cut_rod(arr1, size))
-# print("Maximum Obtainable Value is", cut_rod2(arr1, size))
+print("Maximum Obtainable Value is", cut_rod2(arr1, size))
 
 
 def rodCut(price, n):
@@ -67,4 +67,4 @@ def rodCut(price, n):
     return max_val
 
 
-print("Maximum Obtainable Value is", rodCut(arr1, size))
+# print("Maximum Obtainable Value is", rodCut(arr1, size))

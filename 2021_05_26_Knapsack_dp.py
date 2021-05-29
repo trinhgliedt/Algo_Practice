@@ -28,7 +28,7 @@ class KnapsackProblem:
         m = self.M
         for n in range(self.n, 0, -1):
             if self.S[n][m] != 0 and self.S[n][m] != self.S[n-1][m]:
-                print(n, m, self.S[n][m])
+                # print(n, m, self.S[n][m])
                 print(f"We take item #{n}")
                 m = m - self.w[n]
 
