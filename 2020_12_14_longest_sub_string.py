@@ -25,7 +25,7 @@
 
 # Input: s = ""
 # Output: 0
- 
+
 
 # Constraints:
 
@@ -39,23 +39,25 @@ class Solution(object):
         dic = {}
         res = 0
         j = 0
-        # make a dictionary of characters in the string, with key being each character, 
+        # make a dictionary of characters in the string, with key being each character,
         # value being the location of the first appearance of that character in the string
         for i in range(len(s)):
             if s[i] not in dic:
                 dic[s[i]] = i
-                print("s[i]:", s[i], ", i:", i, ", dic:", dic)
+                # print("char not in dict: s[i]:",
+                #       s[i], ", i:", i, ", dic:", dic)
 
             else:
-                # if the character already in this dictionary, mark its position in variable j. 
+                # if the character already in this dictionary, mark its position in variable j.
                 # j is the count of the substring that has no repetitive character
                 j = max(j, dic[s[i]]+1)
                 # Then, replace its old position with its new position
                 dic[s[i]] = i
-                print("s[i]:", s[i], ", j:", j, ", i:", i, ", dic:", dic)
+            print("s[i]:", s[i], ", j:", j, ", i:", i, ", dic:", dic)
             res = max(res, i-j+1)
             print("res:", res)
         return res
+
 
 t = Solution()
 s1 = 'abcabcbb'
