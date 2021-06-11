@@ -6,6 +6,12 @@ word_list = ['leopard', 'elephant', 'space']
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
 
+# make a map of the chosen word: key to be character, value to be the position
+map = {}
+for i in range(word_length):
+    char = chosen_word[i]
+    map[char] = [i] if char not in map else map[char]+i
+
 # create blank
 display = []
 for _ in range(word_length):
@@ -22,10 +28,15 @@ while not end_of_game:
         print(f"You already guessed {guess}")
 
     # check guessed letter:
-    for position in range(word_length):
-        letter = chosen_word[position]
-        if letter == guess:
-            display[position] = letter
+    if guess in map:
+        for position in map[guess]:
+            display[position] = guess
+
+    # check guessed letter:
+    # for position in range(word_length):
+    #     letter = chosen_word[position]
+    #     if letter == guess:
+    #         display[position] = letter
 
     # check if user is wrong
     if guess not in chosen_word:
