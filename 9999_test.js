@@ -1,10 +1,11 @@
-const users = [
-  { username: "chuot2008", address: "12345" },
-  { username: "kinchasa", address: "5439752" },
-];
-
-const filteredUsers = users.filter((user) => {
-  return user.username === "chuot20082";
-});
-
-console.log(filteredUsers);
+// var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+var format = /[!@#$%^&*()+\=\[\]{};':"\\|,<>\/?]+/;
+str = "hi$m";
+function checkStr() {
+  if (format.test(str) || str.indexOf(" ") > -1) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(checkStr());
