@@ -1,5 +1,3 @@
-from typing import DefaultDict
-
 from collections import defaultdict
 
 
