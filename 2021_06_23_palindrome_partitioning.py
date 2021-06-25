@@ -27,7 +27,7 @@ class Solution:
             if seg[i] != seg[j]:
                 return False
             i += 1
-            j += 1
+            j -= 1
         return True
 
     def dfs(self, s: str):
