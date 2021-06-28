@@ -36,7 +36,14 @@ class Solution:
         self.k = k
         self.res = None
 
-        self.inorder(root)
+        # self.inorder(root)
+        if root is not None:
+            self.inorder(root.left)
+            self.k -= 1
+            if self.k == 0:
+                self.res = root.val
+                return
+            self.inorder(root.right)
         return self.res
 
     def inorder(self, root):
