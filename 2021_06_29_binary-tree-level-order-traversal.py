@@ -38,7 +38,7 @@ class Solution:
             return ans
         q = deque([root])
         while(q):
-            n = len(q):
+            n = len(q)
             temp = []
             for i in range(0, n):
                 f = q.popleft()
@@ -50,6 +50,6 @@ class Solution:
                     q.append(f.right)
 
             if len(temp) > 0:
-                ans.apppend(temp[:])
+                ans.append(temp[:])
                 temp.clear()
         return ans
