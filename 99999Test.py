@@ -1,11 +1,17 @@
-def factorial(n):
-    # if n < 0 or int(n) != n:
-    #     return
-    assert n >= 0 and int(n) == n, "The number must be positive integer only"
+def fibonnaci(n):
+    assert n >= 0 and int(
+        n) == n, "Fibonacci number cannot be negative or non integer"
     if n in [0, 1]:
         return n
-    else:
-        return n*factorial(n-1)
+    return fibonnaci(n-1)+fibonnaci(n-2)
 
 
-print(factorial(1.5))
+# print(fibonnaci(1))
+# print(fibonnaci(2))
+# print(fibonnaci(3))
+# print(fibonnaci(4))
+# print(fibonnaci(5))
+# print(fibonnaci(6))
+# print(fibonnaci(7))
+print(fibonnaci(8))
+print(fibonnaci(-1))
