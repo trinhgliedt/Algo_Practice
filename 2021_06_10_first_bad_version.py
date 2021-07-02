@@ -35,16 +35,16 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        left, right = 1, n
-        while left <= right:
-            mid = left + (right-left)//2
+        left = 1
+        right = n
 
-            if isBadVersion(mid) == False:
-                left = mid + 1
+        while(left < right):
+            mid = left+(right-left)//2
+            if not isBadVersion(mid):
+                left = mid+1
             else:
-                if isBadVersion(mid-1) == False and mid >= 1 or mid == 0:
-                    return mid
-                right = mid-1
+                right = mid
+        return left
 
 
 s = Solution()
