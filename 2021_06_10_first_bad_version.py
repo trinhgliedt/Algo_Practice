@@ -40,6 +40,7 @@ class Solution(object):
 
         while(left < right):
             mid = left+(right-left)//2
+            print(left, mid, right, end=",")
             if not isBadVersion(mid):
                 left = mid+1
             else:

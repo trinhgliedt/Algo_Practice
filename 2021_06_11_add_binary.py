@@ -38,6 +38,7 @@ class Solution:
 
         while i >= 0 or j >= 0 or carry:
             total = carry
+            print(i, j, result, total, carry)
             if i >= 0:
                 total += int(a[i])
                 i -= 1

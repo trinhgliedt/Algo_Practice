@@ -1,11 +1,8 @@
-// var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-var format = /[!@#$%^&*()+\=\[\]{};':"\\|,<>\/?]+/;
-str = "hi$m";
-function checkStr() {
-  if (format.test(str) || str.indexOf(" ") > -1) {
-    return true;
-  } else {
-    return false;
-  }
+var a = 1;
+function b() {
+  a = 10;
+  return;
+  function a() {}
 }
-console.log(checkStr());
+b();
+console.log(a);

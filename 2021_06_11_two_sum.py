@@ -1,4 +1,5 @@
 # https://leetcode.com/problems/two-sum/
+# Easy
 # Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
 # You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -38,9 +39,10 @@ class Solution:
             if second_num in map:
                 return [i, map[second_num]]
             map[nums[i]] = i
+            # print(map)
 
 
 s = Solution()
-print(s.twoSum([2, 7, 11, 15], 9))
-print(s.twoSum([3, 2, 4], 6))
-print(s.twoSum([3, 3], 6))
+print(s.twoSum([11, 15, 2, 7], 9))
+# print(s.twoSum([3, 2, 4], 6))
+# print(s.twoSum([3, 3], 6))
