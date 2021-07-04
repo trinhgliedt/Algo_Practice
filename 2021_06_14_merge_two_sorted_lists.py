@@ -33,6 +33,7 @@ class ListNode:
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         cur = ListNode(0)
+        # set ans here, cos we want ans to always be pointing at the head of cur. Cos at the end of the code cur won't be at the head anymore/
         ans = cur
         while (l1 and l2):
             if l1.val > l2.val:
@@ -58,9 +59,9 @@ class Solution:
 
 s = Solution()
 
-l1_1 = ListNode(1)
-l1_2 = ListNode(2)
-l1_4 = ListNode(4)
+l1_1 = ListNode(5)
+l1_2 = ListNode(6)
+l1_4 = ListNode(8)
 
 l1_1.next = l1_2
 l1_2.next = l1_4
@@ -76,5 +77,5 @@ answer = s.mergeTwoLists(l1_1, l2_1)
 print(answer)
 
 while answer != None:
-    print(answer.val)
+    print(answer.val, end=",")
     answer = answer.next
