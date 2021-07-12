@@ -43,6 +43,45 @@
 # Remove d and e from cde to get c.
 # Remove a and b from abc to get c.
 # It takes  deletions to make both strings anagrams.
+from collections import Counter
+
 
 def makeAnagram(a, b):
     # Write your code here
+    # if both strings are empty, return 0
+    if a == "" and b == "":
+        return 0
+    # if one string is empty, return length of the non-empty string
+    if a == "" and b >= "":
+        return len(b)
+    if a != "" and b == "":
+        return len(a)
+
+    # make a hash map of the first string, hMapA
+    hMapA = Counter(a)
+    # make a hash map of the second string, hMapB
+    hMapB = Counter(b)
+    # make a variable for delCount
+    delCount = 0
+
+    # 1. iterate through keys, values of hMapA:
+    # 2. for each key: check if key exists in hMapB:
+    # 3. if key doesn't exist: increase delCount by val (which is the number of occurrence)
+    # 4. if key exists but val is smaller than in hMapB: increase delCount by val in hMapB - val in hMapA
+    def checkXinY(xMap, yMap):
+        delta = 0
+        for char, occur in xMap.items():
+            if char not in yMap:
+                delta += occur
+            elif char in yMap and occur < yMap[char]:
+                delta += yMap[char] - occur
+        return delta
+    delCount += checkXinY(hMapA, hMapB)
+    # repeat step 1-4 for hMapB
+    delCount += checkXinY(hMapB, hMapA)
+    return delCount
+
+
+print(makeAnagram("cde", "dcf"))
+print(makeAnagram("", ""))
+print(makeAnagram("cde", ""))
