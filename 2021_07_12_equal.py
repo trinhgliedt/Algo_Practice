@@ -68,3 +68,25 @@
 # Three operations were required.
 def equal(arr):
     # Write your code here
+    # giving chocolates so all are equal is the same as taking chocolates from the people with more so that all would have equal amount
+    # we can take so that all would have the minimum amount, or take more so that all would have less than minimum amount
+    min_element = min(arr)
+    move_counts = []
+    # the most amount to take is so that everyone has min-4. If we do min-5 then it's the same as min
+    for i in range(5):
+        move_count = 0
+        for a in arr:
+            diff = a - (min_element - i)
+            # take 5
+            move_count += diff//5
+            # if there's left, take 2
+            move_count += (diff % 5)//2
+            # if there's left, take one each
+            move_count += (diff % 5) % 2//1
+            print(i, a, move_count)
+        move_counts.append(move_count)
+        print(move_counts)
+    return min(move_counts)
+
+
+print(equal([2, 2, 3, 7]))
