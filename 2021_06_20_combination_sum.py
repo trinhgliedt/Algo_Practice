@@ -44,6 +44,9 @@ from typing import List
 
 class Solution:
     def solution(self, candidates, ans, cur, target, index, sum):
+        # we need to keep track of:
+        # 1. The current array and its sum
+        # 2. Out last index (position of our last candidate). So that we can pop and try a new branch.
         if sum == target:
             ans.append(cur[:])
         elif sum < target:
@@ -52,6 +55,7 @@ class Solution:
                 cur.append(candidates[i])
                 self.solution(candidates, ans, cur,
                               target, i, sum+candidates[i])
+                # current candidate was already added to cur above. Below we are popping it to try a new branch
                 cur.pop()
             return
 
